@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [StudentSuite]" guice-stage="DEVELOPMENT">
+  <parameter name="password" value="admin"/>
+  <parameter name="url" value="https://test.duralabs.in:9443/"/>
+  <parameter name="username" value="admin"/>
+  <test thread-count="5" name="creategameslist(failed)">
+    <parameter name="studentPassword" value="1234"/>
+    <parameter name="date" value="1/12/2026"/>
+    <parameter name="gameType" value="BridgeMcq"/>
+    <parameter name="gameName" value="Game11BridgeMcq"/>
+    <parameter name="studentName" value="samplestudent"/>
+    <parameter name="gameListName" value="samplegameslist"/>
+    <parameter name="attemptNo" value="4"/>
+    <parameter name="facultyName" value="samplefaculty 1"/>
+    <parameter name="right" value="2"/>
+    <parameter name="wrong" value="1"/>
+    <parameter name="status" value="Active"/>
+    <classes>
+      <class name="tests.GamesListTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="userLogin"/>
+          <include name="tearDown"/>
+          <include name="verifyGames" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- tests.GamesListTest -->
+    </classes>
+  </test> <!-- creategameslist(failed) -->
+</suite> <!-- Failed suite [StudentSuite] -->

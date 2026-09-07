@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-StudentSuite" class="navigator-link">
+              <span class="suite-name border-failed">StudentSuite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-StudentSuite" class="navigator-link ">
+                    <span>C:\Users\ADMIN\eclipse-workspace\automation-test\src\test\resources\Auto.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-StudentSuite" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-StudentSuite" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-StudentSuite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-StudentSuite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-StudentSuite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-StudentSuite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">1 method, 1 failed,   </span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-StudentSuite" class="hide-methods failed suite-StudentSuite"> (hide)</a> <!-- hide-methods failed suite-StudentSuite -->
+                      <a href="#" panel-name="suite-StudentSuite" class="show-methods failed suite-StudentSuite"> (show)</a> <!-- show-methods failed suite-StudentSuite -->
+                    </span>
+                    <div class="method-list-content failed suite-StudentSuite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-StudentSuite" title="tests.GamesListTest" class="method navigator-link" hash-for-method="verifyGames(Game11BridgeMcq, BridgeMcq)">verifyGames(Game11BridgeMcq, BridgeMcq)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-StudentSuite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-StudentSuite" class="panel StudentSuite">
+          <div class="suite-StudentSuite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">tests.GamesListTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyGames(Game11BridgeMcq, BridgeMcq)">
+                  </a> <!-- verifyGames(Game11BridgeMcq, BridgeMcq) -->
+                  <span class="method-name">verifyGames</span>
+                  <span class="parameters">(Game11BridgeMcq,BridgeMcq)</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class=&apos;option-text&apos; and text()=&apos;Shark&apos;] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.75, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\ADMIN\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49292}, goog:processID: 14020, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49292/devtoo..., se:cdpVersion: 145.0.7632.75, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e5fbab9c03cf5e2a52b9116a6ef85548
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.Dashboard.Assessment.InteractionTemplatePage.previewSpecificInteractionTemplate(InteractionTemplatePage.java:104)
+	at tests.GamesListTest.verifyGames(GamesListTest.java:202)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-StudentSuite-class-failed -->
+        </div> <!-- panel StudentSuite -->
+        <div panel-name="test-xml-StudentSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\ADMIN\eclipse-workspace\automation-test\src\test\resources\Auto.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;StudentSuite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;parameter name=&quot;password&quot; value=&quot;admin&quot;/&gt;
+  &lt;parameter name=&quot;url&quot; value=&quot;https://test.duralabs.in:9443/&quot;/&gt;
+  &lt;parameter name=&quot;username&quot; value=&quot;admin&quot;/&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;creategameslist&quot;&gt;
+    &lt;parameter name=&quot;studentPassword&quot; value=&quot;1234&quot;/&gt;
+    &lt;parameter name=&quot;date&quot; value=&quot;1/12/2026&quot;/&gt;
+    &lt;parameter name=&quot;gameType&quot; value=&quot;BridgeMcq&quot;/&gt;
+    &lt;parameter name=&quot;gameName&quot; value=&quot;Game11BridgeMcq&quot;/&gt;
+    &lt;parameter name=&quot;studentName&quot; value=&quot;samplestudent&quot;/&gt;
+    &lt;parameter name=&quot;gameListName&quot; value=&quot;samplegameslist&quot;/&gt;
+    &lt;parameter name=&quot;attemptNo&quot; value=&quot;4&quot;/&gt;
+    &lt;parameter name=&quot;facultyName&quot; value=&quot;samplefaculty 1&quot;/&gt;
+    &lt;parameter name=&quot;right&quot; value=&quot;2&quot;/&gt;
+    &lt;parameter name=&quot;wrong&quot; value=&quot;1&quot;/&gt;
+    &lt;parameter name=&quot;status&quot; value=&quot;Active&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;tests.GamesListTest&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;verifyGames&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- tests.GamesListTest --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- creategameslist --&gt;
+&lt;/suite&gt; &lt;!-- StudentSuite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-StudentSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for StudentSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">creategameslist (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-StudentSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for StudentSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-StudentSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for StudentSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_StudentSuite');
+function tableData_StudentSuite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(1);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'verifyGames')
+data.setCell(0, 2, 'tests.GamesListTest')
+data.setCell(0, 3, 49511);
+window.suiteTableData['StudentSuite']= { tableData: data, tableDiv: 'times-div-StudentSuite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 49 seconds</span>
+              <div id="times-div-StudentSuite">
+              </div> <!-- times-div-StudentSuite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-StudentSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for StudentSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-StudentSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">3 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">tests.GamesListTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">CreateGamesListAndVerifyDetails</span>
+                <br/>
+                <span class="ignored-method-name">verifyGamesEnrollment</span>
+                <br/>
+                <span class="ignored-method-name">enrollGamesListAndVerifyDetails</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-StudentSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.GamesListTest</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">setUp(https://test.duralabs.in:9443/)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="configuration-class before">
+                <span class="method-name">userLogin(admin, admin)</span>
+                <span class="method-start">5375 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyGames(Game11BridgeMcq, BridgeMcq)</span>
+                <span class="method-start">6007 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-suite after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">55604 ms</span>
+              </div> <!-- configuration-suite after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="StudentSuite">
+  <parameter name="username" value="admin" />
+  <parameter name="password" value="admin" />
+  <parameter name="url" value="http://localhost:9000/"/>
+ <!--   <parameter name="excelFile" value="data_format.xls" /> -->
+  <test name="login_logout" enabled="true">
+		<classes>
+			<class name="tests.LoginTest">
+				<methods>
+					<include name="verifyLoggedInUser" />
+					<include name="verifyLogout" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="createstudent" enabled="false">
+		<parameter name="studentName" value="autoteststud1" />
+  		<parameter name="studentPassword" value="1234" />
+		<classes>
+			<class name="tests.StudentTest">
+				<methods>
+					<include name="userLogin" />
+					<include name="CreateStudentAndVerifyDetails" />
+					<include name="verifyLogout" />
+					<include name="studentLoginCheck" />
+					<include name="finalTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="createappadmin" enabled="false">
+		<classes>
+			<class name="tests.AppAdminTest">
+				<methods>
+					<include name="CreateAppAdminAndVerifyDetails" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="createfaculty" enabled="false">
+		<classes>
+			<class name="tests.FacultyTest">
+				<methods>
+					<include name="CreateFacultyAndVerifyDetails" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="createstaffadmin" enabled="false">
+		<classes>
+			<class name="tests.StaffAdminTest">
+				<methods>
+					<include name="CreateStaffAdminAndVerifyDetails" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="createcontentcreator" enabled="false">
+		<classes>
+			<class name="tests.ContentCreatorTest">
+				<methods>
+					<include name="CreateContentCreatorAndVerifyDetails" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="createusergroup" enabled="false">
+		<classes>
+			<class name="tests.UserGroupTest">
+				<methods>
+					<include name="CreateUserGroupAndVerifyDetails" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="createcourse" enabled="false">
+		<classes>
+			<class name="tests.CourseTest">
+				<methods>
+					<include name="CreateCourseAndVerifyDetails" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="createbatch" enabled="false">
+		<classes>
+			<class name="tests.BatchTest">
+				<methods>
+					<include name="CreateBatchAndVerifyDetails" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="creategameslist" enabled="false">
+		<parameter name="gameListName" value="samplegameslist" />
+		<parameter name="studentName" value="samplestudent" />
+		<parameter name="studentPassword" value="1234" />
+		<parameter name="facultyName" value="samplefaculty 1" />
+		<parameter name="gameName" value="Game11BridgeMcq" /> 
+		<parameter name="gameType" value="BridgeMcq" />
+		<!--<parameter name="gameName" value="Game12FruitNinjaMcq" />
+		<parameter name="gameType" value="FruitNinjaMcq" />-->
+		<parameter name="attemptNo" value="4" />
+		<parameter name="date" value="1/12/2026" />
+		<parameter name="wrong" value="1" />
+		<parameter name="right" value="2" />
+		<parameter name="status" value="Active" />
+		<classes>
+			<class name="tests.GamesListTest">
+				<methods>
+					<!-- <include name="CreateGamesListAndVerifyDetails" /> -->
+					<!--<include name="enrollGamesListAndVerifyDetails" /> -->
+					<include name="verifyGames" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

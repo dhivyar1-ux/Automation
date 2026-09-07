@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Surefire suite]" verbose="0">
+  <test thread-count="5" name="Surefire test(failed)" verbose="0">
+    <classes>
+      <class name="tests.ContentCreatorTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="userLogin"/>
+          <include name="CreateContentCreatorAndVerifyDetails"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.ContentCreatorTest -->
+      <class name="tests.FacultyTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="userLogin"/>
+          <include name="CreateFacultyAndVerifyDetails"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.FacultyTest -->
+      <class name="tests.StudentTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="CreateStudentAndVerifyDetails"/>
+          <include name="userLogin"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.StudentTest -->
+      <class name="tests.AppAdminTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="CreateAppAdminAndVerifyDetails"/>
+          <include name="userLogin"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.AppAdminTest -->
+      <class name="tests.UserGroupTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="userLogin"/>
+          <include name="tearDown"/>
+          <include name="CreateUserGroupAndVerifyDetails"/>
+        </methods>
+      </class> <!-- tests.UserGroupTest -->
+      <class name="tests.CourseTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="CreateCourseAndVerifyDetails"/>
+          <include name="userLogin"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.CourseTest -->
+      <class name="tests.StaffAdminTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="userLogin"/>
+          <include name="CreateStaffAdminAndVerifyDetails"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.StaffAdminTest -->
+      <class name="tests.GamesListTest">
+        <methods>
+          <include name="enrollGamesListAndVerifyDetails"/>
+          <include name="setUp"/>
+          <include name="userLogin"/>
+          <include name="verifyGamesEnrollment"/>
+          <include name="tearDown"/>
+          <include name="verifyGames"/>
+          <include name="CreateGamesListAndVerifyDetails"/>
+        </methods>
+      </class> <!-- tests.GamesListTest -->
+      <class name="tests.LoginTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="verifyLoggedInUser" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="verifyLogout"/>
+        </methods>
+      </class> <!-- tests.LoginTest -->
+      <class name="tests.BatchTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="CreateBatchAndVerifyDetails"/>
+          <include name="cleanup"/>
+          <include name="tearDown"/>
+          <include name="userLogin"/>
+        </methods>
+      </class> <!-- tests.BatchTest -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->
