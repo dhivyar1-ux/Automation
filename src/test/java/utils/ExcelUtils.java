@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -71,8 +73,11 @@ public class ExcelUtils {
 		case "CreateBatchLabAlloc":
 			sheetname = "batchlaballoc";
 			break;		
-		case "CreateInteracIndiAlloc":
+		case "CreateInteractionTemplateAndVerify":
 			sheetname = "interaction";
+			break;
+		case "CreateMCQInteractionQuestionsAndVerify":
+			sheetname = "mcq";
 			break;
 		default:
 			sheetname = "login";			
@@ -85,61 +90,62 @@ public class ExcelUtils {
     private String[][] getExcelData(String filename, String sheetname) throws IOException {
     	String[][] data = null;
     	try {
-    	String Path_TestData = System.getProperty("user.dir") + "\\src\\test\\resources\\testData\\" + filename;
-	    //Create an object of File class to open xlsx file
-		File file =    new File(Path_TestData);
-		//Create an object of FileInputStream class to read excel file
-		FileInputStream inputStream = new FileInputStream(file);
-		//Creating workbook instance that refers to .xlsx file
-		XSSFWorkbook wb=new XSSFWorkbook(inputStream);
-		//Creating a Sheet object using the sheet Name
-		XSSFSheet sheet=wb.getSheet(sheetname);
-		XSSFCell cell;
-		XSSFRow row = sheet.getRow(0);
-		
-		int noOfRows = 2; //sheet.getPhysicalNumberOfRows();
-        int noOfCols = row.getLastCellNum();
-        data = new String[noOfRows - 1][noOfCols];
-        
-		String cellValue = "";
-		
-		for(int i = 1;i < noOfRows;i++) {
-            for(int j = 0;j < noOfCols;j++) {
-            	row = sheet.getRow(i);
-            	cell = row.getCell(j);
-				switch (cell.getCellType()) {
-				case STRING:
-					cellValue = cell.getStringCellValue();
-					break;
+			Path pathToTestData = Paths.get(
+			System.getProperty("user.dir"),
+			"src", "test", "resources", "testdata", filename);
 
-				case FORMULA:
-					cellValue = cell.getCellFormula();
-					break;
+			File file = pathToTestData.toFile();
+			FileInputStream inputStream = new FileInputStream(file);
+			//Creating workbook instance that refers to .xlsx file
+			XSSFWorkbook wb=new XSSFWorkbook(inputStream);
+			//Creating a Sheet object using the sheet Name
+			XSSFSheet sheet=wb.getSheet(sheetname);
+			XSSFCell cell;
+			XSSFRow row = sheet.getRow(0);
+			
+			int noOfRows = sheet.getPhysicalNumberOfRows();
+			int noOfCols = row.getLastCellNum();
+			data = new String[noOfRows - 1][noOfCols];
+			
+			String cellValue = "";
+			
+			for(int i = 1;i < noOfRows;i++) {
+				for(int j = 0;j < noOfCols;j++) {
+					row = sheet.getRow(i);
+					cell = row.getCell(j);
+					switch (cell.getCellType()) {
+					case STRING:
+						cellValue = cell.getStringCellValue();
+						break;
 
-				case NUMERIC:
-					if (DateUtil.isCellDateFormatted(cell)) {
-						cellValue = cell.getDateCellValue().toString();
-					} else {
-						cellValue = String.format("%.0f", cell.getNumericCellValue());
+					case FORMULA:
+						cellValue = cell.getCellFormula();
+						break;
+
+					case NUMERIC:
+						if (DateUtil.isCellDateFormatted(cell)) {
+							cellValue = cell.getDateCellValue().toString();
+						} else {
+							cellValue = String.format("%.0f", cell.getNumericCellValue());
+						}
+						break;
+
+					case BLANK:
+						cellValue = "";
+						break;
+
+					case BOOLEAN:
+						cellValue = Boolean.toString(cell.getBooleanCellValue());
+						break;
+					default:
+						break;
 					}
-					break;
-
-				case BLANK:
-					cellValue = "";
-					break;
-
-				case BOOLEAN:
-					cellValue = Boolean.toString(cell.getBooleanCellValue());
-					break;
-				default:
-					break;
+					data[i - 1][j] = cellValue;
 				}
-				data[i - 1][j] = cellValue;
-            }
-        }
-		
-        //Close the workbook
-        wb.close();
+			}
+			
+			//Close the workbook
+			wb.close();
     	} catch (Exception e) {
             //System.out.println("The exception is: " + e.getMessage());
 			throw new RuntimeException("Failed to read Excel data", e);
