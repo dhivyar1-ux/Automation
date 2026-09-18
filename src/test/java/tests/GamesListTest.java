@@ -26,15 +26,11 @@ import utils.PageFactory;
 
 public class GamesListTest extends BaseTest{
 	//covers 1. Admin login 2. Create a new Game List and verify the added details
-	 
-    	CreateGamesListPage createGamesListPage = new CreateGamesListPage(driver);
 
 	private GamesPage gamesPage;    
-    private CreateContentCreatorPage createContentCreatorPage;
-    private ContentCreatorDashboardPage contentCreatorDashboardPage;   
+    private CreateGamesListPage createGamesListPage;
     private LoginPage login;    
     private DashboardPage dashboard;
-    private LoginModalPage loginModalPage;
 
     private PageFactory pf;    
     SoftAssert softAssert = new SoftAssert();
@@ -45,7 +41,7 @@ public class GamesListTest extends BaseTest{
         login = pf.loginPage();
         dashboard = pf.dashboardPage();
 		gamesPage = pf.gamesPage();
-        loginModalPage = pf.loginModalPage();
+        createGamesListPage = pf.createGamesListPage();
     }
 
 	public void verifyGamesListDetailsInGrid() {

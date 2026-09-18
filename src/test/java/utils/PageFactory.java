@@ -1,5 +1,6 @@
 package utils;
 
+import pages.CreateGamesListPage;
 import pages.LoginModalPage;
 import pages.LoginPage;
 import pages.Dashboard.Administration.CreateDepartmentPage;
@@ -47,6 +48,6 @@ public class PageFactory {
     public UserGroupPage userGroupPage() { return new UserGroupPage(); }
     public CreateUserGroupPage createUserGroupPage() { return new CreateUserGroupPage(); }
     public GamesPage gamesPage() { return new GamesPage(); }
-
+    public CreateGamesListPage createGamesListPage() {return new CreateGamesListPage(); }
     // … other factories …
 }
