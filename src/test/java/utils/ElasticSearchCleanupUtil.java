@@ -17,8 +17,9 @@ public class ElasticSearchCleanupUtil {
      * 
      * @param studentName The student name to delete
      */
-    public static void deleteUserFromElastic(String userName,String coll_name) {
+    public static void deleteDocFromElastic(String userName,String coll_name) {
         switch(coll_name) {
+            case "interactiontemplate":
             case "student":
             case "staffadmin":
             case "contentcreator":
@@ -44,7 +45,7 @@ public class ElasticSearchCleanupUtil {
             // Build query based on the index
             String jsonPayload = "";
 
-            if ("usergroup".equalsIgnoreCase(indexName)) {
+            if ("usergroup".equalsIgnoreCase(indexName) || "interactiontemplate".equalsIgnoreCase(indexName)) {
                 jsonPayload = String.format(
                     "{\"query\": {\"match\": {\"name\": \"%s\"}}}",
                     userName

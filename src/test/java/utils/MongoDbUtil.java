@@ -19,7 +19,7 @@ public class MongoDbUtil {
      * @param userName the login / name used to locate the record
      * @param type     the collection name (e.g. "student", "app_admin", "user_group")
      */
-    public static void deleteUserByName(String userName, String type) {
+    public static void deleteDocByName(String userName, String type) {
         try (MongoClient mongoClient = MongoClients.create(CONNECTION_STRING)) {
 
             MongoDatabase database = mongoClient.getDatabase(DATABASE_NAME);
@@ -32,14 +32,13 @@ public class MongoDbUtil {
             // -----------------------------------------------------------------
             // 2️⃣  Special handling for user groups (no jhi_user entry exists)
             // -----------------------------------------------------------------
-            if ("user_group".equalsIgnoreCase(type)) {
+            if ("user_group".equalsIgnoreCase(type) || "interaction_template".equalsIgnoreCase(type)) {
                 // Delete directly by the name field
                 DeleteResult groupDeleteResult = targetCollection.deleteOne(
                         new Document("name", userName));
                 System.out.println(
                         "Deleted " + groupDeleteResult.getDeletedCount() +
-                        " record(s) from '" + type + "' collection (user‑group case).");
-                // Nothing to delete from jhi_user, so we are done.
+                        " record(s) from '" + type + "' collection.");
                 return;
             }
 

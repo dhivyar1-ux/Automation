@@ -23,6 +23,9 @@ import pages.Dashboard.Users.Student.StudentDashboardPage;
 import pages.Dashboard.Users.Student.StudentsPage;
 import pages.Dashboard.Users.UserGroup.CreateUserGroupPage;
 import pages.Dashboard.Users.UserGroup.UserGroupPage;
+import pages.Dashboard.Assessment.CreateInteractionPage;
+import pages.Dashboard.Assessment.InteractionDetailPage;
+import pages.Dashboard.Assessment.InteractionTemplatePage;
 
 public class PageFactory {
 
@@ -48,6 +51,12 @@ public class PageFactory {
     public UserGroupPage userGroupPage() { return new UserGroupPage(); }
     public CreateUserGroupPage createUserGroupPage() { return new CreateUserGroupPage(); }
     public GamesPage gamesPage() { return new GamesPage(); }
+<<<<<<< HEAD
     public CreateGamesListPage createGamesListPage() {return new CreateGamesListPage(); }
+=======
+    public InteractionTemplatePage interactionTemplatePage() { return new InteractionTemplatePage(); }
+    public CreateInteractionPage createInteractionPage() { return new CreateInteractionPage(); }
+    public InteractionDetailPage interactionDetailPage() {return new InteractionDetailPage(); }
+>>>>>>> e2cc9fff51d16b5fc33790e5f13c2cf9de8a4c6d
     // … other factories …
 }

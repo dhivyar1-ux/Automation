@@ -1,6 +1,8 @@
 package utils;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class DataStore {
@@ -98,4 +100,26 @@ public class DataStore {
     public static String gamesListInteractionTemplateCategory;
     public static String gamesListPracticeTask;
 
+    // Interaction Template fields for verification
+    public static String interactionTemplateName;
+    public static String interactionTemplateVersion;
+    public static String interactionTemplateType;
+
+    // inside utils.DataStore (after the existing static fields)
+    private static final List<Map<String, Object>> mcqQuestionList = new ArrayList<>();
+
+    /** Add a whole question‑map to the global list. */
+    public static void addMcqQuestionMap(Map<String, Object> qMap) {
+        mcqQuestionList.add(qMap);
+    }
+
+    /** Get a copy of the stored list (read‑only). */
+    public static List<Map<String, Object>> getMcqQuestionList() {
+        return new ArrayList<>(mcqQuestionList);
+    }
+
+    /** Clear the list – handy between test runs. */
+    public static void clearMcqQuestionList() {
+        mcqQuestionList.clear();
+    }
 }
